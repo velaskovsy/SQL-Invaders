@@ -1,2 +1,2 @@
-speed = 2
+speed = 6
 direction = 0

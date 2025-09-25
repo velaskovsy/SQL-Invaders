@@ -1,0 +1,8 @@
+{
+  "FolderOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"fnt_pixel","order":1,"path":"fonts/fnt_pixel/fnt_pixel.yy",},
+    {"name":"Sprite19","order":1,"path":"sprites/Sprite19/Sprite19.yy",},
+    {"name":"Sprite20","order":2,"path":"sprites/Sprite20/Sprite20.yy",},
+  ],
+}

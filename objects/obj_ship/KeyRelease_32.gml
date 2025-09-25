@@ -1,2 +1,8 @@
-var b = instance_create_layer(x, y, "Instances", obj_player_bullet);
-audio_play_sound(snd_bullet, 1, false);
+/*var b = instance_create_layer(x, y, "Instances", obj_player_bullet);
+audio_play_sound(snd_bullet, 1, false);*/
+
+if (global.balas > 0) {        
+    var b = instance_create_layer(x, y, "Instances", obj_player_bullet);
+    audio_play_sound(snd_bullet, 1, false);
+    global.balas -= 1;        
+}
