@@ -8,5 +8,5 @@ if (!variable_global_exists("vidas")){
 }
 
 if (!variable_global_exists("balas")){
-	global.balas = 1000;
+	global.balas = 1;
 }
