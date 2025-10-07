@@ -1,4 +1,3 @@
-
-resCierta = 0;
 text[0] = "";
-autoDestruccion = false;
+txtCntrl = false;
+timer = room_speed * 2;

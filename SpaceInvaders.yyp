@@ -36,6 +36,7 @@
   "resources":[
     {"id":{"name":"fnt_pixel","path":"fonts/fnt_pixel/fnt_pixel.yy",},},
     {"id":{"name":"fnt_PyR","path":"fonts/fnt_PyR/fnt_PyR.yy",},},
+    {"id":{"name":"fnt_respuesta","path":"fonts/fnt_respuesta/fnt_respuesta.yy",},},
     {"id":{"name":"fnt_score","path":"fonts/fnt_score/fnt_score.yy",},},
     {"id":{"name":"obj_alien_bullet","path":"objects/obj_alien_bullet/obj_alien_bullet.yy",},},
     {"id":{"name":"obj_alien1","path":"objects/obj_alien1/obj_alien1.yy",},},
@@ -54,6 +55,7 @@
     {"id":{"name":"obj_respuesta_Recuadro","path":"objects/obj_respuesta_Recuadro/obj_respuesta_Recuadro.yy",},},
     {"id":{"name":"obj_shield","path":"objects/obj_shield/obj_shield.yy",},},
     {"id":{"name":"obj_ship","path":"objects/obj_ship/obj_ship.yy",},},
+    {"id":{"name":"obj_textoPregunta","path":"objects/obj_textoPregunta/obj_textoPregunta.yy",},},
     {"id":{"name":"rm_highscores","path":"rooms/rm_highscores/rm_highscores.yy",},},
     {"id":{"name":"rm_menu_principal","path":"rooms/rm_menu_principal/rm_menu_principal.yy",},},
     {"id":{"name":"rm_play0","path":"rooms/rm_play0/rm_play0.yy",},},

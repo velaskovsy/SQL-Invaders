@@ -3,6 +3,7 @@
   "ResourceOrderSettings":[
     {"name":"fnt_pixel","order":1,"path":"fonts/fnt_pixel/fnt_pixel.yy",},
     {"name":"fnt_PyR","order":2,"path":"fonts/fnt_PyR/fnt_PyR.yy",},
+    {"name":"fnt_respuesta","order":3,"path":"fonts/fnt_respuesta/fnt_respuesta.yy",},
     {"name":"obj_boton_ayuda","order":7,"path":"objects/obj_boton_ayuda/obj_boton_ayuda.yy",},
     {"name":"obj_boton_jugar","order":6,"path":"objects/obj_boton_jugar/obj_boton_jugar.yy",},
     {"name":"obj_boton_padre","order":5,"path":"objects/obj_boton_padre/obj_boton_padre.yy",},
@@ -10,6 +11,7 @@
     {"name":"obj_preguntaRecuadro","order":1,"path":"objects/obj_preguntaRecuadro/obj_preguntaRecuadro.yy",},
     {"name":"obj_preguntas","order":2,"path":"objects/obj_preguntas/obj_preguntas.yy",},
     {"name":"obj_respuesta_Recuadro","order":3,"path":"objects/obj_respuesta_Recuadro/obj_respuesta_Recuadro.yy",},
+    {"name":"obj_textoPregunta","order":9,"path":"objects/obj_textoPregunta/obj_textoPregunta.yy",},
     {"name":"rm_menu_principal","order":1,"path":"rooms/rm_menu_principal/rm_menu_principal.yy",},
     {"name":"rm_play0","order":2,"path":"rooms/rm_play0/rm_play0.yy",},
     {"name":"RoomUI","order":1,"path":"roomui/RoomUI/RoomUI.yy",},
