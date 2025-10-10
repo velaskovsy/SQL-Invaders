@@ -12,3 +12,6 @@ if (!txtCntrl)
 		}
 	txtCntrl = true;
 }
+
+
+alphaDestroy();

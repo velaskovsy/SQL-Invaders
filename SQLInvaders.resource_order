@@ -1,13 +1,16 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"fnt_feedback","order":4,"path":"fonts/fnt_feedback/fnt_feedback.yy",},
     {"name":"fnt_pixel","order":1,"path":"fonts/fnt_pixel/fnt_pixel.yy",},
     {"name":"fnt_PyR","order":2,"path":"fonts/fnt_PyR/fnt_PyR.yy",},
     {"name":"fnt_respuesta","order":3,"path":"fonts/fnt_respuesta/fnt_respuesta.yy",},
     {"name":"obj_boton_ayuda","order":7,"path":"objects/obj_boton_ayuda/obj_boton_ayuda.yy",},
+    {"name":"obj_boton_continuar","order":11,"path":"objects/obj_boton_continuar/obj_boton_continuar.yy",},
     {"name":"obj_boton_jugar","order":6,"path":"objects/obj_boton_jugar/obj_boton_jugar.yy",},
     {"name":"obj_boton_padre","order":5,"path":"objects/obj_boton_padre/obj_boton_padre.yy",},
     {"name":"obj_boton_salir","order":8,"path":"objects/obj_boton_salir/obj_boton_salir.yy",},
+    {"name":"obj_feedbackRecuadro","order":10,"path":"objects/obj_feedbackRecuadro/obj_feedbackRecuadro.yy",},
     {"name":"obj_preguntaRecuadro","order":1,"path":"objects/obj_preguntaRecuadro/obj_preguntaRecuadro.yy",},
     {"name":"obj_preguntas","order":2,"path":"objects/obj_preguntas/obj_preguntas.yy",},
     {"name":"obj_respuesta_Recuadro","order":3,"path":"objects/obj_respuesta_Recuadro/obj_respuesta_Recuadro.yy",},
@@ -24,5 +27,7 @@
     {"name":"Sprite23","order":5,"path":"sprites/Sprite23/Sprite23.yy",},
     {"name":"Sprite26","order":8,"path":"sprites/Sprite26/Sprite26.yy",},
     {"name":"Sprite27","order":9,"path":"sprites/Sprite27/Sprite27.yy",},
+    {"name":"Sprite28","order":10,"path":"sprites/Sprite28/Sprite28.yy",},
+    {"name":"Sprite29","order":11,"path":"sprites/Sprite29/Sprite29.yy",},
   ],
 }

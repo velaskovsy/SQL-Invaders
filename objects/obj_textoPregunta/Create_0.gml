@@ -17,3 +17,4 @@ char_speed = 1;
 font = fnt_PyR;
 rmOrigem = 0;
 line_sep = 70;
+text_color = c_white;
