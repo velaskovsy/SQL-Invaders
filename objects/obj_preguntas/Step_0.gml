@@ -16,7 +16,7 @@ switch (estado) {
     
     case "feedback":
         // esperar unos segundos y pasar a la siguiente
-        feedbackTimer--;
+        /*feedbackTimer--;
         if (feedbackTimer <= 0) {
             contadorPreguntas++;
             if (contadorPreguntas < maxPreguntas) {
@@ -26,8 +26,6 @@ switch (estado) {
             } else {
                 ir_a_juego_principal();
             }
-        }
+        }*/
     break;
 }
-
-

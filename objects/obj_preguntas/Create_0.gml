@@ -98,7 +98,7 @@ verificarRespuesta = function(indice) {
 	if (!respuesta_evaluada) {
 		var preg = preguntas[pregunta_actual];
 	    if (indice == preguntas[pregunta_actual].correcta) {
-	        score = score + 100;
+	        score += 100;
 			Aciertos++;
 			global.balas += 10; // <-- Todavía no se cual valor puede ser
 	    } 
@@ -118,4 +118,23 @@ mostrarFeedback = function() {
 	var cntnr = instance_create_layer(750, 1200, "Instances", obj_boton_continuar);
 	
 	feedbackTimer = room_speed * 2;
+};
+
+continuarQuiz = function() {
+    contadorPreguntas++;
+
+    if (contadorPreguntas < maxPreguntas) {
+        respuesta_evaluada = false;
+        global.respCntrl = false;
+        estado = "esperando";
+
+        // limpiar feedback antes de crear la siguiente pregunta
+        with (obj_feedbackRecuadro) instance_destroy();
+        with (obj_boton_continuar) instance_destroy();
+		with (obj_textoPregunta) instance_destroy();
+
+        crearPregunta(); // <- muestra la siguiente pregunta
+    } else {
+        ir_a_juego_principal();
+    }
 };

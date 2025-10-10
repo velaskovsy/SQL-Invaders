@@ -1,4 +1,6 @@
 //if (image_alpha < 1 && !global.respCntrl) image_alpha += 0.05;
+
+// Esto es para crear el texto de manera dinamica dentro del cuadro
 if (!txtCntrl)
 {
 	var _inst = instance_create_layer(0, 0, "FX", obj_textoPregunta);
@@ -37,6 +39,11 @@ if (!txtCntrl)
 		}
 	}
 	txtCntrl = true;
-	
-	
 }
+
+/*if (alphadestroy) {
+    alpha -= 0.05;
+    if (alpha <= 0) {
+        instance_destroy();
+    }
+}*/
