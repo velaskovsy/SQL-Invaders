@@ -138,3 +138,25 @@ continuarQuiz = function() {
         ir_a_juego_principal();
     }
 };
+		
+ir_a_juego_principal = function() {
+    // Reactivar todas las instancias del juego
+    instance_activate_all();
+    
+    // Destruir los objetos del quiz (por seguridad)
+    with (obj_preguntaRecuadro) instance_destroy();
+    with (obj_respuesta_Recuadro) instance_destroy();
+    with (obj_feedbackRecuadro) instance_destroy();
+    with (obj_boton_continuar) instance_destroy();
+	with (obj_textoPregunta) instance_destroy();
+    
+    // Resetear flags globales
+    quizActivo = false;
+    global.respCntrl = false;
+    respuesta_evaluada = false;
+    preguntaActiva = false;
+    estado = "esperando";
+	contadorPreguntas = 0;
+};
+
+
