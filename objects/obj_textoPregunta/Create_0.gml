@@ -18,3 +18,4 @@ font = fnt_PyR;
 rmOrigem = 0;
 line_sep = 70;
 text_color = c_white;
+text_scale = 0;

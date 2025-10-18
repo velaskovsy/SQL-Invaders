@@ -15,7 +15,6 @@ maxPreguntas = 3;
 estado = "esperando";
 respuesta_evaluada = false;
 Aciertos = 0;
-
 // Variables para feedback
 respuesta_correcta = false;
 
@@ -253,26 +252,26 @@ crearPregunta = function(){
     var preg = preguntas[pregunta_actual];
     
     // Crear cuadro de pregunta
-    var prgnt = instance_create_layer(300, 200, "Instances", obj_preguntaRecuadro);
+    var prgnt = instance_create_layer(150, 200, "Instances", obj_preguntaRecuadro);
     prgnt.text[0] = preg.texto;
     
     // Crear opciones
-    var resp1 = instance_create_layer(300, 700, "Instances", obj_respuesta_Recuadro);
+    var resp1 = instance_create_layer(150, 600, "Instances", obj_respuesta_Recuadro);
     resp1.text[0] = preg.opciones[0];
     resp1.indice_respuesta = 0;
     
-    var resp2 = instance_create_layer(300, 900, "Instances", obj_respuesta_Recuadro);
+    var resp2 = instance_create_layer(150, 830, "Instances", obj_respuesta_Recuadro);
     resp2.text[0] = preg.opciones[1];
     resp2.indice_respuesta = 1;
 
-    var resp3 = instance_create_layer(300, 1100, "Instances", obj_respuesta_Recuadro);
+    var resp3 = instance_create_layer(150, 1060, "Instances", obj_respuesta_Recuadro);
     resp3.text[0] = preg.opciones[2];
     resp3.indice_respuesta = 2;
     
-    var resp4 = instance_create_layer(300, 1300, "Instances", obj_respuesta_Recuadro);
+    var resp4 = instance_create_layer(150, 1290, "Instances", obj_respuesta_Recuadro);
     resp4.text[0] = preg.opciones[3];
     resp4.indice_respuesta = 3;
-    
+	
     preguntaActiva = true;
 }
 
@@ -344,7 +343,7 @@ ir_a_juego_principal = function() {
     with (obj_feedbackRecuadro) instance_destroy();
     with (obj_boton_continuar) instance_destroy();
     with (obj_textoPregunta) instance_destroy();
-    
+
     quizActivo = false;
     global.respCntrl = false;
     respuesta_evaluada = false;

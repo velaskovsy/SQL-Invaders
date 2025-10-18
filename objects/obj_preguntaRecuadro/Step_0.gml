@@ -7,8 +7,8 @@ if (!txtCntrl)
 		{
 		text_last = 0;
 		text_width = 1200;
-		text_x = 450;
-		text_y = 230;
+		text_x = 400;
+		text_y = 250;
 		}
 	txtCntrl = true;
 }

@@ -3,7 +3,7 @@ txtCntrl = false;
 timer = room_speed * 2;
 indice_respuesta = 0;
 autoDestroy = false;
-
+depth = -1000;
 
 alphaDestroy = function()
 {

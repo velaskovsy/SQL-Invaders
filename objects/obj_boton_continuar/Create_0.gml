@@ -6,3 +6,5 @@ autoDestroy = false;
 
 alpha = 1;
 alphadestroy = false;
+
+depth = -1000;

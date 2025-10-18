@@ -2,6 +2,7 @@ text[0] = "";
 txtCntrl = false;
 timer = room_speed * 2;
 image_alpha = 0
+depth = -1000;
 
 alphaDestroy = function() {
 	if (global.respCntrl = true)

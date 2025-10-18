@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"fnt_respuesta",
+  "%Name":"fnt_respuesta_p",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":33,
@@ -175,7 +175,7 @@
     "252":{"character":252,"h":42,"offset":1,"shift":23,"w":21,"x":90,"y":90,},
     "253":{"character":253,"h":42,"offset":1,"shift":23,"w":21,"x":113,"y":90,},
     "255":{"character":255,"h":42,"offset":1,"shift":23,"w":21,"x":454,"y":222,},
-    "9647":{"character":9647,"h":42,"offset":6,"shift":32,"w":20,"x":2,"y":310,},
+    "9647":{"character":9647,"h":42,"offset":8,"shift":32,"w":20,"x":2,"y":310,},
   },
   "hinting":0,
   "includeTTF":false,
@@ -185,7 +185,7 @@
   "last":0,
   "lineHeight":42,
   "maintainGms1Font":false,
-  "name":"fnt_respuesta",
+  "name":"fnt_respuesta_p",
   "parent":{
     "name":"Fonts",
     "path":"folders/Fonts.yy",
