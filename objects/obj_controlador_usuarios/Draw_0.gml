@@ -1,4 +1,4 @@
-
+draw_set_font(fnt_PyR);
 draw_set_colour(c_white);
 
 switch (state){
@@ -8,22 +8,26 @@ switch (state){
 		break;
 		
 	case DataStates.CHOOSE:
-		draw_text(16, 16, "Presiona ENTER para escribir tu correo institucional");
+		draw_text(16, 400, "¡Bienvenido a SQL Invaders!");
+		draw_text(16, 600, "Presiona ENTER para escribir tu correo institucional solo si estás\nregistrado");
+		draw_text(16, 800, "Presiona SHIFT para escribir tu correo institucional si es que no\nestás registrado")
 		break;
 		
 	case DataStates.USERNAME:
-		draw_text(16, 16, "Correo Institucional: " + username);
-		draw_text(16, 48, "Presiona ENTER para seguir...");
+		draw_text(16, 400, "¡Bienvenido a SQL Invaders!");
+		draw_text(16, 600, "Correo Institucional: " + username);
+		draw_text(16, 800, "Presiona ENTER para seguir...");
 		break;
 		
 	case DataStates.WELCOME:
-		draw_text(16, 16, "¡Bienvenido a SQL Invaders!");
-		draw_text(16, 48, "Este juego fue hecho con el propósito de enseñar consultas SQL con GROUP BY + HAVING");
-		draw_text(16, 80, "El juego se compone de 3 niveles. Por cada respuesta correcta ganarás 100 puntos y 10 balas.");
-		draw_text(16, 112, "Si te quedas sin municiones, aparecerán más preguntas para ayudarte.");
-		draw_text(16, 144, "Para más información, presiona el botón de ayuda en el menú principal.");
-		draw_text(16, 192, "Presiona ENTER para continuar...");
-	break;
+		draw_text(16, 400, "¡Bienvenido a SQL Invaders!");
+		draw_text(16, 600, "Este juego fue hecho con el propósito de enseñar consultas SQL\ncon GROUP BY + HAVING");
+		draw_text(16, 800, "El juego se compone de 3 niveles. Por cada respuesta correcta\nganarás 100 puntos y 10 balas.");
+		draw_text(16, 1000, "Si te quedas sin municiones, aparecerán más preguntas para\nayudarte.");
+		draw_text(16, 1200, "Para más información, presiona el botón de ayuda en el menú\nprincipal.");
+		draw_text(16, 1400, "Presiona ENTER para continuar...");
+		
+		break;
 		
 	case DataStates.ACCESS:
 		var _user = array[login];
@@ -40,5 +44,5 @@ switch (state){
 			var _text = _u.username + " - " + string(_u.score);
 			draw_text(16, 176 + (32 * i), _text);
 		}
-	break;
+		break;
 }

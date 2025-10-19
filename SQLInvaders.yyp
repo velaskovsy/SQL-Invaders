@@ -81,6 +81,7 @@
     {"id":{"name":"spr_cuadroPregunta","path":"sprites/spr_cuadroPregunta/spr_cuadroPregunta.yy",},},
     {"id":{"name":"spr_cuadroRespuesta","path":"sprites/spr_cuadroRespuesta/spr_cuadroRespuesta.yy",},},
     {"id":{"name":"spr_explosion","path":"sprites/spr_explosion/spr_explosion.yy",},},
+    {"id":{"name":"spr_fondo_login","path":"sprites/spr_fondo_login/spr_fondo_login.yy",},},
     {"id":{"name":"spr_highscores","path":"sprites/spr_highscores/spr_highscores.yy",},},
     {"id":{"name":"spr_nave","path":"sprites/spr_nave/spr_nave.yy",},},
     {"id":{"name":"spr_player_bullet","path":"sprites/spr_player_bullet/spr_player_bullet.yy",},},

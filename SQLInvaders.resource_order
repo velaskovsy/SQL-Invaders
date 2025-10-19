@@ -27,6 +27,7 @@
     {"name":"spr_boton_menu","order":6,"path":"sprites/spr_boton_menu/spr_boton_menu.yy",},
     {"name":"spr_cuadroPregunta","order":3,"path":"sprites/spr_cuadroPregunta/spr_cuadroPregunta.yy",},
     {"name":"spr_cuadroRespuesta","order":4,"path":"sprites/spr_cuadroRespuesta/spr_cuadroRespuesta.yy",},
+    {"name":"spr_fondo_login","order":13,"path":"sprites/spr_fondo_login/spr_fondo_login.yy",},
     {"name":"spr_titulo","order":7,"path":"sprites/spr_titulo/spr_titulo.yy",},
     {"name":"Sprite19","order":1,"path":"sprites/Sprite19/Sprite19.yy",},
     {"name":"Sprite20","order":2,"path":"sprites/Sprite20/Sprite20.yy",},

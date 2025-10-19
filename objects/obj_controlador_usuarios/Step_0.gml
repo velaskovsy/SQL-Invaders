@@ -50,7 +50,7 @@ switch (state){
 			
 				array_push(array ,{
 					username: username,
-					score: score
+					score: 0
 				});
 			
 				var _f =function(a, b){
@@ -72,9 +72,9 @@ switch (state){
 			if (login_type == 0){
 				login = _match;
 			
-				global.username = username;       // correo institucional o nombre
-				global.loginIndex = _match;       // posición en el array
-				global.userArray = array;	
+				global.username = username;       
+				global.loginIndex = _match;       
+				global.userArray = array;
 			
 			
 				state = DataStates.WELCOME;
@@ -91,7 +91,7 @@ switch (state){
 		if (keyboard_check_pressed(vk_enter)) {
 			room_goto(rm_menu_principal);
 		}
-	break;
+		break;
 		
 	case DataStates.ACCESS:
 		if keyboard_check_pressed(vk_escape){

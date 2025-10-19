@@ -39,21 +39,20 @@ login_type = 0;
 #endregion
 
 actualizarPuntaje = function() {
-	if (login >= 0) {
+	if (login >= 0) { // el usuario ya hizo login
 		array[login].score = score;
-		
+
 		var _headers = ds_map_create();
 		ds_map_add(_headers, "Content-Type", "application/json");
 		ds_map_add(_headers, "X-Access-Key", access_key);
 
-		var _f = function(a, b){
+		var _f = function(a, b) {
 			return b.score - a.score;
-		}
+		};
 		array_sort(array, _f);
-		
+
 		var _data = json_stringify(array);
 		http_request(url, "PUT", _headers, _data);
-		
 		ds_map_destroy(_headers);
 	}
 };
