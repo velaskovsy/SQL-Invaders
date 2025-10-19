@@ -50,6 +50,7 @@
     {"id":{"name":"obj_boton_jugar","path":"objects/obj_boton_jugar/obj_boton_jugar.yy",},},
     {"id":{"name":"obj_boton_padre","path":"objects/obj_boton_padre/obj_boton_padre.yy",},},
     {"id":{"name":"obj_boton_salir","path":"objects/obj_boton_salir/obj_boton_salir.yy",},},
+    {"id":{"name":"obj_controlador_usuarios","path":"objects/obj_controlador_usuarios/obj_controlador_usuarios.yy",},},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
     {"id":{"name":"obj_explosion","path":"objects/obj_explosion/obj_explosion.yy",},},
     {"id":{"name":"obj_feedbackRecuadro","path":"objects/obj_feedbackRecuadro/obj_feedbackRecuadro.yy",},},
@@ -62,6 +63,7 @@
     {"id":{"name":"obj_ship","path":"objects/obj_ship/obj_ship.yy",},},
     {"id":{"name":"obj_textoPregunta","path":"objects/obj_textoPregunta/obj_textoPregunta.yy",},},
     {"id":{"name":"rm_highscores","path":"rooms/rm_highscores/rm_highscores.yy",},},
+    {"id":{"name":"rm_login","path":"rooms/rm_login/rm_login.yy",},},
     {"id":{"name":"rm_menu_principal","path":"rooms/rm_menu_principal/rm_menu_principal.yy",},},
     {"id":{"name":"rm_play0","path":"rooms/rm_play0/rm_play0.yy",},},
     {"id":{"name":"rm_play1","path":"rooms/rm_play1/rm_play1.yy",},},
@@ -104,6 +106,7 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"rm_login","path":"rooms/rm_login/rm_login.yy",},},
     {"roomId":{"name":"rm_menu_principal","path":"rooms/rm_menu_principal/rm_menu_principal.yy",},},
     {"roomId":{"name":"rm_play0","path":"rooms/rm_play0/rm_play0.yy",},},
     {"roomId":{"name":"rm_play1","path":"rooms/rm_play1/rm_play1.yy",},},
