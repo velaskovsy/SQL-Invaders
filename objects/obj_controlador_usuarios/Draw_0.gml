@@ -9,13 +9,13 @@ switch (state){
 		
 	case DataStates.CHOOSE:
 		draw_text(16, 400, "¡Bienvenido a SQL Invaders!");
-		draw_text(16, 600, "Presiona ENTER para escribir tu correo institucional solo si estás\nregistrado");
-		draw_text(16, 800, "Presiona SHIFT para escribir tu correo institucional si es que no\nestás registrado")
+		draw_text(16, 600, "Presiona ENTER para escribir tu correo solo si estás\nregistrado");
+		draw_text(16, 800, "Presiona SHIFT para escribir tu correo si es que no\nestás registrado")
 		break;
 		
 	case DataStates.USERNAME:
 		draw_text(16, 400, "¡Bienvenido a SQL Invaders!");
-		draw_text(16, 600, "Correo Institucional: " + username);
+		draw_text(16, 600, "Correo: " + username);
 		draw_text(16, 800, "Presiona ENTER para seguir...");
 		break;
 		

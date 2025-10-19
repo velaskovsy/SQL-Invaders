@@ -7,7 +7,7 @@ for (var i = 0; i < _len; i++) {
     else draw_set_color(c_white);
     
     var _text = _u.username + " - " + string(_u.score);
-    draw_text(550, 450 + (i * 80), _text);
+    draw_text(100, 450 + (i * 80), _text);
 }
 draw_set_color(c_white);
 

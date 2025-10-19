@@ -44,7 +44,7 @@ alphaDestroy();*/
 
 if (!txtCntrl)
 {
-    var ancho_texto = 1100;
+    var ancho_texto = 1300;
     var alto_max_cuadro = sprite_height * image_yscale; // altura real del recuadro
 
     draw_set_font(fnt_respuesta);
