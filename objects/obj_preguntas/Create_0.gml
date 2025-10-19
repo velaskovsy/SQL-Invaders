@@ -18,6 +18,9 @@ Aciertos = 0;
 // Variables para feedback
 respuesta_correcta = false;
 
+// NUEVO: Array para rastrear preguntas ya mostradas
+preguntas_usadas = [];
+
 // Textos
 texto = "";
 resp1    = "";
@@ -195,7 +198,7 @@ switch(room) {
 	            feedback: "Es necesario unir naves y pilotos, agrupar por modelo de nave y usar HAVING para mostrar solo las que tienen al menos 3 pilotos asignados."
 	        },
 	        {
-	            texto: "Planetas con más de 2 invasores tipo “élite”.",
+	            texto: "Planetas con más de 2 invasores tipo élite",
 	            opciones: [
 	                "SELECT planeta FROM invasores WHERE COUNT() > 2;",
 	                "SELECT planeta, COUNT() FROM invasores GROUP BY tipo HAVING COUNT() > 2;",
@@ -203,7 +206,7 @@ switch(room) {
 	                "SELECT p.nombre, COUNT(i.id) FROM planetas p JOIN invasores i ON p.id=i.id_planeta WHERE i.tipo='élite' GROUP BY p.nombre HAVING COUNT(i.id) > 2;"
 	            ],
 	            correcta: 3,
-	            feedback: "Primero se filtran los invasores de tipo “élite” con WHERE. Luego se agrupan por planeta y HAVING aplica la condición sobre el conteo."
+	            feedback: "Primero se filtran los invasores de tipo élite con WHERE. Luego se agrupan por planeta y HAVING aplica la condición sobre el conteo."
 	        },
 			{
 			    texto: "Comandantes con más de 3 naves asignadas.",
@@ -250,7 +253,7 @@ switch(room) {
 			    feedback: "Se necesita unir naves y pilotos, agrupar por modelo y filtrar con HAVING los modelos con 2 o más pilotos. Las otras opciones no combinan las tablas ni filtran correctamente."
 			},
 			{
-			    texto: "Planetas con más de 1 invasor tipo “élite”.",
+			    texto: "Planetas con más de 1 invasor tipo élite",
 			    opciones: [
 			        "SELECT p.nombre, COUNT(i.id) FROM planetas p JOIN invasores i ON p.id=i.id_planeta WHERE i.tipo='élite' GROUP BY p.nombre HAVING COUNT(i.id) > 1;", 
 			        "SELECT planeta, COUNT(*) FROM invasores WHERE tipo='élite';", 
@@ -413,7 +416,30 @@ crearPregunta = function(){
         }];
     }
 
-    pregunta_actual = irandom(array_length(preguntas) - 1);
+    // MODIFICADO: Elegir pregunta aleatoria que NO esté en preguntas_usadas
+    var pregunta_disponible = false;
+    var intentos = 0;
+    
+    while (!pregunta_disponible && intentos < 100) {
+        pregunta_actual = irandom(array_length(preguntas) - 1);
+        
+        // Verificar si ya fue usada (sin usar array_find_index)
+        var ya_usada = false;
+        for (var i = 0; i < array_length(preguntas_usadas); i++) {
+            if (preguntas_usadas[i] == pregunta_actual) {
+                ya_usada = true;
+                break;
+            }
+        }
+        
+        if (!ya_usada) {
+            pregunta_disponible = true;
+            // Agregar a la lista de usadas
+            array_push(preguntas_usadas, pregunta_actual);
+        }
+        intentos++;
+    }
+    
     var preg = preguntas[pregunta_actual];
     
     // Crear cuadro de pregunta
@@ -515,4 +541,7 @@ ir_a_juego_principal = function() {
     preguntaActiva = false;
     estado = "esperando";
     contadorPreguntas = 0;
+    
+    // NUEVO: Limpiar historial de preguntas usadas para el próximo quiz
+    preguntas_usadas = [];
 };
