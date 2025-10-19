@@ -88,7 +88,62 @@ switch(room) {
 	            ],
 	            correcta: 1,
 	            feedback: "Para mostrar el escudo máximo por planeta se utiliza MAX() junto con GROUP BY, de manera que cada planeta muestre su valor más alto."
-	        }
+	        },
+			{
+			    texto: "¿Cómo mostramos la suma de rayos disparados por cada planeta?",
+			    opciones: [
+			        "SELECT planeta, SUM(rayos) FROM disparos;", 
+			        "SELECT planeta, SUM(rayos) FROM disparos GROUP BY planeta;", 
+			        "SELECT SUM(rayos) FROM disparos GROUP BY planeta;", 
+			        "SELECT planeta FROM disparos;"
+			    ],
+			    correcta: 1,
+			    feedback: "Es necesario agrupar los registros por planeta usando GROUP BY para que SUM() sume los rayos de cada planeta por separado. La opción A suma todos los rayos pero no los agrupa; la C agrupa pero no muestra el planeta."
+			},
+			{
+			    texto: "Obtener el promedio de energía por nave.",
+			    opciones: [
+			        "SELECT nave, AVG(energia) FROM naves GROUP BY nave;", 
+			        "SELECT AVG(energia) FROM naves;", 
+			        "SELECT nave, energia FROM naves;", 
+			        "SELECT AVG(nave) FROM naves GROUP BY energia;"
+			    ],
+			    correcta: 0,
+			    feedback: "AVG() calcula el promedio de energía y GROUP BY nave permite que el promedio se haga por cada nave individual. Las otras opciones no agrupan correctamente o usan sintaxis inválida."
+			},
+			{
+			    texto: "Número de pilotos por rango.",
+			    opciones: [
+			        "SELECT rango, COUNT(*) FROM pilotos GROUP BY rango;", 
+			        "SELECT COUNT(*) FROM pilotos;", 
+			        "SELECT rango, COUNT(*) FROM pilotos;", 
+			        "SELECT rango FROM pilotos;"
+			    ],
+			    correcta: 0,
+			    feedback: "COUNT(*) junto a GROUP BY rango permite contar cuántos pilotos hay en cada rango. La opción 1 da el total de todos los pilotos, y la opción 2 no agrupa."
+			},
+			{
+			    texto: "Mostrar el máximo de combustible usado por modelo de nave.",
+			    opciones: [
+			        "SELECT modelo, MAX(combustible) FROM naves GROUP BY modelo;", 
+			        "SELECT modelo, combustible FROM naves;", 
+			        "SELECT MAX(combustible) FROM naves;", 
+			        "SELECT modelo FROM naves;"
+			    ],
+			    correcta: 0,
+			    feedback: "MAX() permite obtener el valor más alto de combustible, pero necesitamos GROUP BY modelo para que el máximo sea por cada modelo. Las demás opciones o no agrupan o no muestran el modelo."
+			},
+			{
+			    texto: "Promedio de edad de comandantes por planeta.",
+			    opciones: [
+			        "SELECT planeta, AVG(edad) FROM comandantes GROUP BY planeta;", 
+			        "SELECT AVG(edad) FROM comandantes;", 
+			        "SELECT planeta, SUM(edad) FROM comandantes;", 
+			        "SELECT planeta FROM comandantes GROUP BY edad;"
+			    ],
+			    correcta: 0,
+			    feedback: "AVG() calcula el promedio y GROUP BY planeta lo separa por cada planeta. La opción 1 da un promedio global, y las demás no hacen la agrupación correcta."
+			}
 	    ];
 	break;
 
@@ -149,7 +204,62 @@ switch(room) {
 	            ],
 	            correcta: 3,
 	            feedback: "Primero se filtran los invasores de tipo “élite” con WHERE. Luego se agrupan por planeta y HAVING aplica la condición sobre el conteo."
-	        }
+	        },
+			{
+			    texto: "Comandantes con más de 3 naves asignadas.",
+			    opciones: [
+			        "SELECT c.nombre, COUNT(n.id) FROM comandantes c JOIN naves n ON c.id=n.id_comandante GROUP BY c.nombre HAVING COUNT(n.id) > 3;", 
+			        "SELECT c.nombre FROM comandantes c JOIN naves n;", 
+			        "SELECT comandante, COUNT(*) FROM naves WHERE COUNT(*) > 3;", 
+			        "SELECT nombre, COUNT(*) FROM naves;"
+			    ],
+			    correcta: 0,
+			    feedback: "Se requiere JOIN para combinar comandantes y naves, GROUP BY para agrupar por comandante y HAVING para filtrar los que tienen más de 3 naves. Las demás opciones o no usan HAVING o no combinan las tablas correctamente."
+			},
+			{
+			    texto: "Planetas donde la suma de ataques supera 50.",
+			    opciones: [
+			        "SELECT p.nombre, SUM(a.rayos) FROM planetas p JOIN ataques a ON p.id=a.id_planeta GROUP BY p.nombre HAVING SUM(a.rayos) > 50;", 
+			        "SELECT nombre FROM planetas WHERE SUM(rayos) > 50;", 
+			        "SELECT planeta, SUM(rayos) FROM ataques;", 
+			        "SELECT planeta FROM ataques;"
+			    ],
+			    correcta: 0,
+			    feedback: "JOIN permite relacionar planetas con ataques. SUM() calcula total de rayos y HAVING filtra planetas que superan 50. La opción B es incorrecta porque SUM() no se puede usar en WHERE."
+			},
+			{
+			    texto: "Sectores con promedio de energía superior a 1500.",
+			    opciones: [
+			        "SELECT s.nombre, AVG(e.energia) FROM sectores s JOIN estaciones e ON s.id=e.id_sector GROUP BY s.nombre HAVING AVG(e.energia) > 1500;", 
+			        "SELECT sector, AVG(energia) FROM estaciones WHERE AVG(energia) > 1500;", 
+			        "SELECT AVG(energia) FROM estaciones;", 
+			        "SELECT s.nombre FROM sectores;"
+			    ],
+			    correcta: 0,
+			    feedback: "AVG() calcula el promedio, GROUP BY permite separar por sector y HAVING filtra sectores con promedio mayor a 1500. La opción B intenta usar AVG() en WHERE, lo cual es inválido."
+			},
+			{
+			    texto: "Mostrar modelos de nave con al menos 2 pilotos.",
+			    opciones: [
+			        "SELECT n.modelo, COUNT(p.id) FROM naves n JOIN pilotos p ON n.id=p.id_nave GROUP BY n.modelo HAVING COUNT(p.id) >= 2;", 
+			        "SELECT modelo, COUNT(*) FROM pilotos;", 
+			        "SELECT n.modelo FROM naves;", 
+			        "SELECT modelo, COUNT(*) FROM pilotos GROUP BY modelo;"
+			    ],
+			    correcta: 0,
+			    feedback: "Se necesita unir naves y pilotos, agrupar por modelo y filtrar con HAVING los modelos con 2 o más pilotos. Las otras opciones no combinan las tablas ni filtran correctamente."
+			},
+			{
+			    texto: "Planetas con más de 1 invasor tipo “élite”.",
+			    opciones: [
+			        "SELECT p.nombre, COUNT(i.id) FROM planetas p JOIN invasores i ON p.id=i.id_planeta WHERE i.tipo='élite' GROUP BY p.nombre HAVING COUNT(i.id) > 1;", 
+			        "SELECT planeta, COUNT(*) FROM invasores WHERE tipo='élite';", 
+			        "SELECT planeta FROM invasores;", 
+			        "SELECT p.nombre FROM planetas p JOIN invasores i ON p.id=i.id_planeta;"
+			    ],
+			    correcta: 0,
+			    feedback: "Primero filtramos invasores tipo 'élite', luego agrupamos por planeta y aplicamos HAVING para seleccionar los que tienen más de 1. Las demás opciones no aplican correctamente HAVING ni COUNT()."
+			}
 	    ];
 	break;
 
@@ -210,7 +320,62 @@ switch(room) {
 	            ],
 	            correcta: 3,
 	            feedback: "Al unir naves, pilotos y pruebas se puede calcular la velocidad promedio y el número de pilotos. HAVING permite aplicar ambas restricciones."
-	        }
+	        },
+			{
+			    texto: "Comandantes con más de 2 escuadrones y naves con más de 5 victorias.",
+			    opciones: [
+			        "SELECT c.nombre, COUNT(e.id), SUM(n.victorias) FROM comandantes c JOIN escuadrones e ON c.id=e.id_comandante JOIN naves n ON e.id=n.id_escuadron GROUP BY c.nombre HAVING COUNT(e.id) > 2 AND SUM(n.victorias) > 5;", 
+			        "SELECT c.nombre, COUNT(n.id) FROM comandantes c JOIN naves n ON c.id=n.id_comandante;", 
+			        "SELECT nombre FROM comandantes;", 
+			        "SELECT c.nombre, SUM(n.victorias) FROM naves n JOIN escuadrones e ON n.id_escuadron=e.id;"
+			    ],
+			    correcta: 0,
+			    feedback: "Se requiere combinar tres tablas y usar GROUP BY para agrupar por comandante. HAVING permite filtrar por número de escuadrones y victorias. Las otras opciones no aplican ambas condiciones o no agrupan correctamente."
+			},
+			{
+			    texto: "Ciudades con promedio de ataques fallidos < 2 y defensas exitosas > 8.",
+			    opciones: [
+			        "SELECT ciu.nombre, AVG(a.fallidos), SUM(d.exitosas) FROM ciudades ciu JOIN ataques a ON ciu.id=a.id_ciudad JOIN defensas d ON ciu.id=d.id_ciudad GROUP BY ciu.nombre HAVING AVG(a.fallidos) < 2 AND SUM(d.exitosas) > 8;", 
+			        "SELECT nombre FROM ciudades;", 
+			        "SELECT ciu.nombre, COUNT(*) FROM ataques a;", 
+			        "SELECT * FROM defensas d;"
+			    ],
+			    correcta: 0,
+			    feedback: "Se necesitan tres tablas para calcular ambos valores. AVG() y SUM() permiten medir ataques fallidos y defensas exitosas respectivamente, y HAVING filtra según las condiciones establecidas."
+			},
+			{
+			    texto: "Tipos de nave y regiones con misiones > 4 o velocidad promedio > 8000.",
+			    opciones: [
+			        "SELECT n.tipo, r.nombre, COUNT(m.id), AVG(n.velocidad) FROM naves n JOIN misiones m ON n.id=m.id_nave JOIN regiones r ON n.id_region=r.id GROUP BY n.tipo, r.nombre HAVING COUNT(m.id) > 4 OR AVG(n.velocidad) > 8000;", 
+			        "SELECT tipo, COUNT(*) FROM naves;", 
+			        "SELECT n.tipo FROM naves;", 
+			        "SELECT r.nombre, AVG(n.velocidad) FROM regiones r JOIN naves n;"
+			    ],
+			    correcta: 0,
+			    feedback: "El uso de tres tablas permite evaluar número de misiones y velocidad promedio. HAVING con OR filtra correctamente si se cumple alguna de las condiciones. Las demás opciones no combinan ni filtran correctamente."
+			},
+			{
+			    texto: "Planetas con más de 40 rayos lanzados y menos de 3 invasores sobrevivientes.",
+			    opciones: [
+			        "SELECT p.nombre, SUM(b.rayos), COUNT(i.id) FROM planetas p JOIN batallas b ON p.id=b.id_planeta JOIN invasores i ON b.id=i.id_batalla GROUP BY p.nombre HAVING SUM(b.rayos) > 40 AND COUNT(i.id) < 3;", 
+			        "SELECT planeta FROM batallas;", 
+			        "SELECT SUM(rayos) FROM batallas;", 
+			        "SELECT p.nombre, SUM(rayos) FROM planetas p JOIN batallas b ON p.id=b.id_planeta;"
+			    ],
+			    correcta: 0,
+			    feedback: "Se combinan planetas, batallas e invasores. SUM() y COUNT() permiten medir rayos e invasores, y HAVING filtra según las condiciones. Las otras opciones no calculan ni filtran correctamente."
+			},
+			{
+			    texto: "Modelos de nave con promedio de tripulantes > 5 y recursos totales usados > 20000.",
+			    opciones: [
+			        "SELECT n.modelo, AVG(n.tripulantes), SUM(r.costo_total) FROM naves n JOIN recursos r ON n.id=r.id_nave GROUP BY n.modelo HAVING AVG(n.tripulantes) > 5 AND SUM(r.costo_total) > 20000;", 
+			        "SELECT modelo FROM naves;", 
+			        "SELECT AVG(tripulantes) FROM naves;", 
+			        "SELECT n.modelo, SUM(r.costo_total) FROM naves n JOIN recursos r ON n.id=r.id_nave;"
+			    ],
+			    correcta: 0,
+			    feedback: "JOIN entre naves y recursos permite calcular tanto el promedio de tripulantes como la suma de recursos. GROUP BY modelo y HAVING aplican las condiciones requeridas. Las demás opciones no cumplen ambos criterios."
+			}
 	    ];
 	break;
 
