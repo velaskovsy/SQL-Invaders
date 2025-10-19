@@ -5,3 +5,4 @@ instance_destroy(other);
 instance_destroy();
 
 score += 100;
+global.puntaje +=100;

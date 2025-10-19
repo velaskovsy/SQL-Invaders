@@ -40,7 +40,7 @@ login_type = 0;
 
 actualizarPuntaje = function() {
 	if (login >= 0) { // el usuario ya hizo login
-		array[login].score = score;
+		array[login].score = global.puntaje;
 
 		var _headers = ds_map_create();
 		ds_map_add(_headers, "Content-Type", "application/json");

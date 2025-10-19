@@ -15,6 +15,8 @@ maxPreguntas = 3;
 estado = "esperando";
 respuesta_evaluada = false;
 Aciertos = 0;
+global.puntaje = 0;
+
 // Variables para feedback
 respuesta_correcta = false;
 
@@ -483,6 +485,7 @@ verificarRespuesta = function(indice) {
         var preg = preguntas[pregunta_actual];
         if (indice == preg.correcta) {
             score += 100;
+			global.puntaje += 100;
             Aciertos++;
             global.balas += 10; // recompensa por respuesta correcta
         } 

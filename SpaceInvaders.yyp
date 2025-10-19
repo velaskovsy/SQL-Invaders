@@ -61,7 +61,9 @@
     {"id":{"name":"obj_respuesta_Recuadro","path":"objects/obj_respuesta_Recuadro/obj_respuesta_Recuadro.yy",},},
     {"id":{"name":"obj_shield","path":"objects/obj_shield/obj_shield.yy",},},
     {"id":{"name":"obj_ship","path":"objects/obj_ship/obj_ship.yy",},},
+    {"id":{"name":"Obj_texto_ayuda","path":"objects/Obj_texto_ayuda/Obj_texto_ayuda.yy",},},
     {"id":{"name":"obj_textoPregunta","path":"objects/obj_textoPregunta/obj_textoPregunta.yy",},},
+    {"id":{"name":"rm_ayuda","path":"rooms/rm_ayuda/rm_ayuda.yy",},},
     {"id":{"name":"rm_highscores","path":"rooms/rm_highscores/rm_highscores.yy",},},
     {"id":{"name":"rm_login","path":"rooms/rm_login/rm_login.yy",},},
     {"id":{"name":"rm_menu_principal","path":"rooms/rm_menu_principal/rm_menu_principal.yy",},},
@@ -113,6 +115,7 @@
     {"roomId":{"name":"rm_play1","path":"rooms/rm_play1/rm_play1.yy",},},
     {"roomId":{"name":"rm_play2","path":"rooms/rm_play2/rm_play2.yy",},},
     {"roomId":{"name":"rm_highscores","path":"rooms/rm_highscores/rm_highscores.yy",},},
+    {"roomId":{"name":"rm_ayuda","path":"rooms/rm_ayuda/rm_ayuda.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
