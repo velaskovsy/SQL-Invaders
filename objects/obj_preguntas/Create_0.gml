@@ -487,8 +487,9 @@ verificarRespuesta = function(indice) {
             score += 100;
 			global.puntaje += 100;
             Aciertos++;
-            global.balas += 10; // recompensa por respuesta correcta
+            global.balas += 8; // recompensa por respuesta correcta
         } 
+		else global.balas += 3;
         
         // Guardar resultado y mostrar feedback
         respuesta_correcta = (indice == preg.correcta);

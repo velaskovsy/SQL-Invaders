@@ -22,7 +22,7 @@ switch (state){
 	case DataStates.WELCOME:
 		draw_text(16, 400, "¡Bienvenido a SQL Invaders!");
 		draw_text(16, 600, "Este juego fue hecho con el propósito de enseñar consultas SQL\ncon GROUP BY + HAVING");
-		draw_text(16, 800, "El juego se compone de 3 niveles. Por cada respuesta correcta\nganarás 100 puntos y 10 balas.");
+		draw_text(16, 800, "El juego se compone de 3 niveles. Por cada respuesta correcta\nganarás 100 puntos y 8 balas.");
 		draw_text(16, 1000, "Si te quedas sin municiones, aparecerán más preguntas para\nayudarte.");
 		draw_text(16, 1200, "Para más información, presiona el botón de ayuda en el menú\nprincipal.");
 		draw_text(16, 1400, "Presiona ENTER para continuar...");
