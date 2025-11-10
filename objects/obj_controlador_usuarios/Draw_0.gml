@@ -33,7 +33,7 @@ switch (state){
 		var _user = array[login];
 		draw_text(16, 16, _user.username);
 		draw_text(16, 48, _user.score);
-		draw_text(16, 80, "Presiona ECAPE para salir de tu sesión...");
+		draw_text(16, 80, "Presiona ESCAPE para salir de tu sesión...");
 	
 		var _len = array_length(array);
 		for (var i = 0; i<_len; i++){

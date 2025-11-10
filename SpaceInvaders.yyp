@@ -71,6 +71,7 @@
     {"id":{"name":"rm_play1","path":"rooms/rm_play1/rm_play1.yy",},},
     {"id":{"name":"rm_play2","path":"rooms/rm_play2/rm_play2.yy",},},
     {"id":{"name":"RoomUI","path":"roomui/RoomUI/RoomUI.yy",},},
+    {"id":{"name":"scr_log_respuesta","path":"scripts/scr_log_respuesta/scr_log_respuesta.yy",},},
     {"id":{"name":"snd_background","path":"sounds/snd_background/snd_background.yy",},},
     {"id":{"name":"snd_bullet","path":"sounds/snd_bullet/snd_bullet.yy",},},
     {"id":{"name":"snd_explosion","path":"sounds/snd_explosion/snd_explosion.yy",},},

@@ -15,7 +15,7 @@ maxPreguntas = 3;
 estado = "esperando";
 respuesta_evaluada = false;
 Aciertos = 0;
-global.puntaje = 0;
+if (!variable_global_exists("puntaje")) global.puntaje = 0;
 
 // Variables para feedback
 respuesta_correcta = false;
@@ -443,7 +443,24 @@ crearPregunta = function(){
     }
     
     var preg = preguntas[pregunta_actual];
-    
+	
+// ---------- Apartado para guardar las preguntas y respuestas en el csv de los logs -----------
+	
+	// Guardar información para el log
+	global.pregunta_actual_texto = preg.texto;
+
+	// Convertir el array de opciones a un solo string "Opción1 | Opción2 | Opción3 | Opción4"
+	global.pregunta_actual_opciones = "";
+	for (var i = 0; i < array_length(preg.opciones); i++) {
+		global.pregunta_actual_opciones += preg.opciones[i];
+		if (i < array_length(preg.opciones) - 1) global.pregunta_actual_opciones += " | ";
+	}
+
+	// Guardar el momento en que la pregunta fue creada (para medir tiempo de respuesta)
+	global.tiempo_inicio_pregunta = current_time;
+   
+// ----------------------------------------------------------------------------------------------  
+ 
     // Crear cuadro de pregunta
     var prgnt = instance_create_layer(150, 200, "Instances", obj_preguntaRecuadro);
     prgnt.text[0] = preg.texto;
@@ -496,6 +513,22 @@ verificarRespuesta = function(indice) {
         feedback_texto = preg.feedback;
         global.respCntrl = true;
         respuesta_evaluada = true;
+		
+		// Calcular el tiempo de respuesta
+        var tiempoRespuesta = (current_time - global.tiempo_inicio_pregunta) / 1000;
+		
+		scr_log_respuesta(
+            date_time_string(date_current_datetime()),        // timestamp
+            global.username,                                  // idJugador
+            global.pregunta_actual_texto,                     // pregunta
+            global.pregunta_actual_opciones,                  // alternativas
+            preg.opciones[indice],                            // respuestaJugador
+            (indice == preg.correcta),                        // esCorrecta
+            tiempoRespuesta,                                  // tiempoRespuesta
+			global.puntaje                                    // puntaje
+        );
+		
+		
         estado = "respuesta";
     }
 }
